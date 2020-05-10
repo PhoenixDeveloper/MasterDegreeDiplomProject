@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		331E9B972468790D00AA37EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B962468790D00AA37EF /* AppDelegate.swift */; };
 		331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B982468790D00AA37EF /* SceneDelegate.swift */; };
-		331E9B9B2468790D00AA37EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B9A2468790D00AA37EF /* ViewController.swift */; };
 		331E9B9E2468790D00AA37EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E9B9C2468790D00AA37EF /* Main.storyboard */; };
 		331E9BA02468791700AA37EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331E9B9F2468791700AA37EF /* Assets.xcassets */; };
 		331E9BA32468791700AA37EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E9BA12468791700AA37EF /* LaunchScreen.storyboard */; };
+		339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A8522246881C7004B5999 /* MainScreenViewController.swift */; };
+		339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A85252468844B004B5999 /* ServiceTableViewCell.swift */; };
+		339A8529246884CA004B5999 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A8528246884CA004B5999 /* ServiceModel.swift */; };
+		339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */; };
 		D8D5D840856F6FE04CE9A2B8 /* Pods_SmartHouseBalance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +24,14 @@
 		331E9B932468790D00AA37EF /* SmartHouseBalance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHouseBalance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331E9B962468790D00AA37EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		331E9B982468790D00AA37EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		331E9B9A2468790D00AA37EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		331E9B9D2468790D00AA37EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		331E9B9F2468791700AA37EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		331E9BA22468791700AA37EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331E9BA42468791700AA37EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339A8522246881C7004B5999 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		339A85252468844B004B5999 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		339A8528246884CA004B5999 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceScreenViewController.swift; sourceTree = "<group>"; };
 		68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.release.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.release.xcconfig"; sourceTree = "<group>"; };
 		F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.debug.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,9 +69,11 @@
 		331E9B952468790D00AA37EF /* SmartHouseBalance */ = {
 			isa = PBXGroup;
 			children = (
+				339A852C246898AD004B5999 /* AddServiceScreen */,
+				339A8527246884AC004B5999 /* Models */,
+				339A8521246881A0004B5999 /* MainScreen */,
 				331E9B962468790D00AA37EF /* AppDelegate.swift */,
 				331E9B982468790D00AA37EF /* SceneDelegate.swift */,
-				331E9B9A2468790D00AA37EF /* ViewController.swift */,
 				331E9B9C2468790D00AA37EF /* Main.storyboard */,
 				331E9B9F2468791700AA37EF /* Assets.xcassets */,
 				331E9BA12468791700AA37EF /* LaunchScreen.storyboard */,
@@ -74,13 +82,45 @@
 			path = SmartHouseBalance;
 			sourceTree = "<group>";
 		};
+		339A8521246881A0004B5999 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339A852424688418004B5999 /* Support */,
+				339A8522246881C7004B5999 /* MainScreenViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		339A852424688418004B5999 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				339A85252468844B004B5999 /* ServiceTableViewCell.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		339A8527246884AC004B5999 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				339A8528246884CA004B5999 /* ServiceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		339A852C246898AD004B5999 /* AddServiceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */,
+			);
+			path = AddServiceScreen;
+			sourceTree = "<group>";
+		};
 		33C839F028568C68AD52B3E4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */,
 				68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,9 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				331E9B9B2468790D00AA37EF /* ViewController.swift in Sources */,
+				339A8529246884CA004B5999 /* ServiceModel.swift in Sources */,
 				331E9B972468790D00AA37EF /* AppDelegate.swift in Sources */,
+				339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */,
+				339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */,
 				331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */,
+				339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
