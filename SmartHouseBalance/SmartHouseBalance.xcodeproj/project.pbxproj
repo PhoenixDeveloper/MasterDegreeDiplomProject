@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		331E9B972468790D00AA37EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B962468790D00AA37EF /* AppDelegate.swift */; };
+		331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B982468790D00AA37EF /* SceneDelegate.swift */; };
+		331E9B9E2468790D00AA37EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E9B9C2468790D00AA37EF /* Main.storyboard */; };
+		331E9BA02468791700AA37EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331E9B9F2468791700AA37EF /* Assets.xcassets */; };
+		331E9BA32468791700AA37EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E9BA12468791700AA37EF /* LaunchScreen.storyboard */; };
+		339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A8522246881C7004B5999 /* MainScreenViewController.swift */; };
+		339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A85252468844B004B5999 /* ServiceTableViewCell.swift */; };
+		339A8529246884CA004B5999 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A8528246884CA004B5999 /* ServiceModel.swift */; };
+		339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */; };
+		339A85302468A239004B5999 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852F2468A239004B5999 /* Persistence.swift */; };
+		D8D5D840856F6FE04CE9A2B8 /* Pods_SmartHouseBalance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHouseBalance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		331E9B932468790D00AA37EF /* SmartHouseBalance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHouseBalance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		331E9B962468790D00AA37EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		331E9B982468790D00AA37EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		331E9B9D2468790D00AA37EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		331E9B9F2468791700AA37EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		331E9BA22468791700AA37EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		331E9BA42468791700AA37EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339A8522246881C7004B5999 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		339A85252468844B004B5999 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		339A8528246884CA004B5999 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceScreenViewController.swift; sourceTree = "<group>"; };
+		339A852F2468A239004B5999 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.release.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.release.xcconfig"; sourceTree = "<group>"; };
+		F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.debug.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		331E9B902468790D00AA37EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D5D840856F6FE04CE9A2B8 /* Pods_SmartHouseBalance.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		331E9B8A2468790D00AA37EF = {
+			isa = PBXGroup;
+			children = (
+				331E9B952468790D00AA37EF /* SmartHouseBalance */,
+				331E9B942468790D00AA37EF /* Products */,
+				33C839F028568C68AD52B3E4 /* Pods */,
+				9C1B96E0C816B8FD950E0447 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		331E9B942468790D00AA37EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				331E9B932468790D00AA37EF /* SmartHouseBalance.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		331E9B952468790D00AA37EF /* SmartHouseBalance */ = {
+			isa = PBXGroup;
+			children = (
+				339A852C246898AD004B5999 /* AddServiceScreen */,
+				339A8527246884AC004B5999 /* Models */,
+				339A8521246881A0004B5999 /* MainScreen */,
+				331E9B962468790D00AA37EF /* AppDelegate.swift */,
+				331E9B982468790D00AA37EF /* SceneDelegate.swift */,
+				331E9B9C2468790D00AA37EF /* Main.storyboard */,
+				331E9B9F2468791700AA37EF /* Assets.xcassets */,
+				331E9BA12468791700AA37EF /* LaunchScreen.storyboard */,
+				331E9BA42468791700AA37EF /* Info.plist */,
+				339A852F2468A239004B5999 /* Persistence.swift */,
+			);
+			path = SmartHouseBalance;
+			sourceTree = "<group>";
+		};
+		339A8521246881A0004B5999 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339A852424688418004B5999 /* Support */,
+				339A8522246881C7004B5999 /* MainScreenViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		339A852424688418004B5999 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				339A85252468844B004B5999 /* ServiceTableViewCell.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		339A8527246884AC004B5999 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				339A8528246884CA004B5999 /* ServiceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		339A852C246898AD004B5999 /* AddServiceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */,
+			);
+			path = AddServiceScreen;
+			sourceTree = "<group>";
+		};
+		33C839F028568C68AD52B3E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */,
+				68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9C1B96E0C816B8FD950E0447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		331E9B922468790D00AA37EF /* SmartHouseBalance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331E9BA72468791700AA37EF /* Build configuration list for PBXNativeTarget "SmartHouseBalance" */;
+			buildPhases = (
+				7D899B418F16037AEF60DA2F /* [CP] Check Pods Manifest.lock */,
+				331E9B8F2468790D00AA37EF /* Sources */,
+				331E9B902468790D00AA37EF /* Frameworks */,
+				331E9B912468790D00AA37EF /* Resources */,
+				38A064ED5ECA25DBA8CFE234 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartHouseBalance;
+			productName = SmartHouseBalance;
+			productReference = 331E9B932468790D00AA37EF /* SmartHouseBalance.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		331E9B8B2468790D00AA37EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Михаил Беленко";
+				TargetAttributes = {
+					331E9B922468790D00AA37EF = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 331E9B8E2468790D00AA37EF /* Build configuration list for PBXProject "SmartHouseBalance" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 331E9B8A2468790D00AA37EF;
+			productRefGroup = 331E9B942468790D00AA37EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				331E9B922468790D00AA37EF /* SmartHouseBalance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		331E9B912468790D00AA37EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331E9BA32468791700AA37EF /* LaunchScreen.storyboard in Resources */,
+				331E9BA02468791700AA37EF /* Assets.xcassets in Resources */,
+				331E9B9E2468790D00AA37EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38A064ED5ECA25DBA8CFE234 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D899B418F16037AEF60DA2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartHouseBalance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		331E9B8F2468790D00AA37EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339A8529246884CA004B5999 /* ServiceModel.swift in Sources */,
+				331E9B972468790D00AA37EF /* AppDelegate.swift in Sources */,
+				339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */,
+				339A85302468A239004B5999 /* Persistence.swift in Sources */,
+				339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */,
+				331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */,
+				339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		331E9B9C2468790D00AA37EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				331E9B9D2468790D00AA37EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		331E9BA12468791700AA37EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				331E9BA22468791700AA37EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		331E9BA52468791700AA37EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		331E9BA62468791700AA37EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		331E9BA82468791700AA37EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8374DGJ7W4;
+				INFOPLIST_FILE = SmartHouseBalance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BelenkoMO.SmartHouseBalance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		331E9BA92468791700AA37EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8374DGJ7W4;
+				INFOPLIST_FILE = SmartHouseBalance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BelenkoMO.SmartHouseBalance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		331E9B8E2468790D00AA37EF /* Build configuration list for PBXProject "SmartHouseBalance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331E9BA52468791700AA37EF /* Debug */,
+				331E9BA62468791700AA37EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		331E9BA72468791700AA37EF /* Build configuration list for PBXNativeTarget "SmartHouseBalance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331E9BA82468791700AA37EF /* Debug */,
+				331E9BA92468791700AA37EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 331E9B8B2468790D00AA37EF /* Project object */;
+}
