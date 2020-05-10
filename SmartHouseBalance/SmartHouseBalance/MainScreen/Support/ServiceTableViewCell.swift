@@ -93,7 +93,7 @@ class ServiceTableViewCell: UITableViewCell, ModelTransfer {
         }
 
         datePaymentLabel.snp.makeConstraints { make in
-            make.leading.equalTo(priceLabel.snp.trailing).offset(8)
+            make.leading.greaterThanOrEqualTo(priceLabel.snp.trailing).offset(8)
             make.top.trailing.bottom.equalToSuperview()
         }
     }

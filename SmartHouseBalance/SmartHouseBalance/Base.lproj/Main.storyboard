@@ -140,7 +140,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzX-sv-Tej">
                                         <rect key="frame" x="0.0" y="38" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -164,16 +164,27 @@
                                 <rect key="frame" x="16" y="456" width="382" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Добавить услугу"/>
+                                <connections>
+                                    <action selector="addServiceButtonClick:" destination="VBr-nY-fyu" eventType="touchUpInside" id="9Fg-F6-adC"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заполнены не все поля" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCj-k3-R89">
+                                <rect key="frame" x="16" y="514" width="382" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="neL-CM-kRt" firstAttribute="top" secondItem="5E1-Jb-YeG" secondAttribute="bottom" constant="16" id="3gu-7A-yox"/>
                             <constraint firstItem="Gks-vL-vkB" firstAttribute="leading" secondItem="ZFw-VH-d4G" secondAttribute="leading" constant="16" id="5EL-2h-8M2"/>
+                            <constraint firstItem="ZFw-VH-d4G" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GCj-k3-R89" secondAttribute="bottom" constant="16" id="85R-pC-NTl"/>
                             <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="Gks-vL-vkB" secondAttribute="trailing" constant="16" id="Be0-iL-T9g"/>
                             <constraint firstItem="5E1-Jb-YeG" firstAttribute="leading" secondItem="ZFw-VH-d4G" secondAttribute="leading" constant="16" id="CNr-eN-xcw"/>
                             <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="neL-CM-kRt" secondAttribute="trailing" constant="16" id="Dle-gb-MYJ"/>
                             <constraint firstItem="Gks-vL-vkB" firstAttribute="top" secondItem="ixf-n1-UCQ" secondAttribute="bottom" constant="16" id="IPe-u3-TiH"/>
+                            <constraint firstItem="GCj-k3-R89" firstAttribute="top" secondItem="3Ih-Ev-dVZ" secondAttribute="bottom" constant="16" id="JCx-zL-0Mb"/>
                             <constraint firstItem="ixf-n1-UCQ" firstAttribute="top" secondItem="neL-CM-kRt" secondAttribute="bottom" constant="16" id="Jab-sv-IVi"/>
                             <constraint firstItem="5E1-Jb-YeG" firstAttribute="top" secondItem="ZFw-VH-d4G" secondAttribute="top" constant="16" id="NHi-aM-XZO"/>
                             <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="5E1-Jb-YeG" secondAttribute="trailing" constant="16" id="Ngs-Iy-5I1"/>
@@ -181,12 +192,21 @@
                             <constraint firstItem="3Ih-Ev-dVZ" firstAttribute="top" secondItem="Gks-vL-vkB" secondAttribute="bottom" constant="16" id="S1S-vp-glS"/>
                             <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="3Ih-Ev-dVZ" secondAttribute="trailing" constant="16" id="cCN-pf-5Pe"/>
                             <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="ixf-n1-UCQ" secondAttribute="trailing" constant="16" id="h1P-0Z-bnR"/>
+                            <constraint firstItem="ZFw-VH-d4G" firstAttribute="trailing" secondItem="GCj-k3-R89" secondAttribute="trailing" constant="16" id="lRq-TI-Ma8"/>
                             <constraint firstItem="neL-CM-kRt" firstAttribute="leading" secondItem="ZFw-VH-d4G" secondAttribute="leading" constant="16" id="mLg-CO-5fS"/>
+                            <constraint firstItem="GCj-k3-R89" firstAttribute="leading" secondItem="ZFw-VH-d4G" secondAttribute="leading" constant="16" id="utg-dV-sgY"/>
                             <constraint firstItem="3Ih-Ev-dVZ" firstAttribute="leading" secondItem="ZFw-VH-d4G" secondAttribute="leading" constant="16" id="yDn-kb-7Hx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZFw-VH-d4G"/>
                     </view>
                     <navigationItem key="navigationItem" title="Добавить услугу" id="rRV-Es-hNM"/>
+                    <connections>
+                        <outlet property="datePaymentTextField" destination="FfA-LQ-CUT" id="Vmo-NF-DVG"/>
+                        <outlet property="errorLabel" destination="GCj-k3-R89" id="Qlt-Mg-s7O"/>
+                        <outlet property="nameOrganizationTextField" destination="FpC-RS-N2g" id="zhW-dl-R9O"/>
+                        <outlet property="priceTextField" destination="EzX-sv-Tej" id="TxB-of-jHB"/>
+                        <outlet property="typeServiceTextField" destination="6lk-4i-rLh" id="KGv-Kk-OFR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt5-dT-mAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

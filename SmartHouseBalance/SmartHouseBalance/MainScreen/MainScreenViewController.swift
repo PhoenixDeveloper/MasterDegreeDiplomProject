@@ -41,7 +41,7 @@ class MainScreenViewController: UIViewController, DTTableViewManageable {
         totalExpenses = 0
         manager.memoryStorage.removeAllItems()
 
-        for item in getMockedData().filter({ $0.datePayment > getPeriod() }).sorted() {
+        for item in Persistence.storage.getServicesFromPeriod(date: getPeriod()) {
             manager.memoryStorage.addItem(item)
             totalExpenses += item.price
         }
@@ -62,41 +62,32 @@ class MainScreenViewController: UIViewController, DTTableViewManageable {
         }
     }
 
-    private func getMockedData() -> [ServiceModel] {
-        let item1 = ServiceModel(nameOrganization: "ОАО 'Горячая вода'",
-                                 typeService: "Водоснабжение",
-                                 price: 1250,
-                                 datePayment: Date(timeIntervalSinceNow: -100000))
-        let item2 = ServiceModel(nameOrganization: "ОАО 'Электро'",
-                                 typeService: "Энергоснабжение",
-                                 price: 1500,
-                                 datePayment: Date(timeIntervalSinceNow: -10000))
-        let item3 = ServiceModel(nameOrganization: "ОАО 'Коммуна'",
-                                 typeService: "Капитальный ремонт",
-                                 price: 750,
-                                 datePayment: Date(timeIntervalSinceNow: -10000000))
-        let item4 = ServiceModel(nameOrganization: "ОАО 'Холодная вода'",
-                                 typeService: "Водоснабжение",
-                                 price: 1750,
-                                 datePayment: Date(timeIntervalSinceNow: -100000000))
-        let item5 = ServiceModel(nameOrganization: "ОАО 'Защита'",
-                                 typeService: "Обслуживание домофона",
-                                 price: 350,
-                                 datePayment: Date(timeIntervalSinceNow: 10000))
+    // Mock-данные
+//    private func getMockedData() -> [ServiceModel] {
+//        let item1 = ServiceModel(nameOrganization: "ОАО 'Горячая вода'",
+//                                 typeService: "Водоснабжение",
+//                                 price: 1250,
+//                                 datePayment: Date(timeIntervalSinceNow: -100000))
+//        let item2 = ServiceModel(nameOrganization: "ОАО 'Электро'",
+//                                 typeService: "Энергоснабжение",
+//                                 price: 1500,
+//                                 datePayment: Date(timeIntervalSinceNow: -10000))
+//        let item3 = ServiceModel(nameOrganization: "ОАО 'Коммуна'",
+//                                 typeService: "Капитальный ремонт",
+//                                 price: 750,
+//                                 datePayment: Date(timeIntervalSinceNow: -10000000))
+//        let item4 = ServiceModel(nameOrganization: "ОАО 'Холодная вода'",
+//                                 typeService: "Водоснабжение",
+//                                 price: 1750,
+//                                 datePayment: Date(timeIntervalSinceNow: -100000000))
+//        let item5 = ServiceModel(nameOrganization: "ОАО 'Защита'",
+//                                 typeService: "Обслуживание домофона",
+//                                 price: 350,
+//                                 datePayment: Date(timeIntervalSinceNow: 10000))
+//
+//        return [item1, item2, item3, item4, item5]
+//    }
 
-        return [item1, item2, item3, item4, item5]
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func clickAddServiceButton(_ sender: Any) {
         performSegue(withIdentifier: "addServiceSegue", sender: self)
     }
