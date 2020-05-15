@@ -33,7 +33,25 @@ class Persistence {
         return services.filter({ $0.datePayment > date }).sorted()
     }
 
+    func getServicesFromPeriod(year: Int, month: Int? = nil) -> [ServiceModel] {
+        let calendar = Calendar.current
+        let services = self.services.filter({ calendar.component(.year, from: $0.datePayment) == year})
+        return month != nil ? services.filter({ calendar.component(.month, from: $0.datePayment) == month! }) : services
+    }
+
     func getExpensesTotal() -> Float {
         return services.reduce(0, { $0 + $1.price })
+    }
+
+    func getYears() -> [String] {
+        var years: [String] = []
+        let calendar = Calendar.current
+        for service in services {
+            let year = "\(calendar.component(.year, from: service.datePayment))"
+            if !(years.contains(year)) {
+                years.append(year)
+            }
+        }
+        return years.sorted()
     }
 }

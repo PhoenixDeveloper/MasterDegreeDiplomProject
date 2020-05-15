@@ -29,11 +29,11 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7g0-4v-sqg">
-                                <rect key="frame" x="16" y="151" width="382" height="625"/>
+                                <rect key="frame" x="16" y="151" width="382" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJF-2o-nUw">
-                                <rect key="frame" x="16" y="838" width="382" height="42"/>
+                                <rect key="frame" x="16" y="755" width="382" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Добавить услугу"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bDL-G6-5Sa">
-                                <rect key="frame" x="16" y="792" width="382" height="30"/>
+                                <rect key="frame" x="16" y="709" width="382" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расходы за отчетный период:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="AV8-7a-0vY">
                                         <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
@@ -63,7 +63,7 @@
                             <constraint firstItem="N2M-i3-cdC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="02O-1s-oOQ"/>
                             <constraint firstItem="bDL-G6-5Sa" firstAttribute="top" secondItem="7g0-4v-sqg" secondAttribute="bottom" constant="16" id="0YO-QC-fw1"/>
                             <constraint firstItem="bDL-G6-5Sa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="16I-ld-XCu"/>
-                            <constraint firstAttribute="bottom" secondItem="sJF-2o-nUw" secondAttribute="bottom" constant="16" id="24j-eX-uWI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sJF-2o-nUw" secondAttribute="bottom" constant="16" id="24j-eX-uWI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7g0-4v-sqg" secondAttribute="trailing" constant="16" id="Af5-UT-KDN"/>
                             <constraint firstItem="7g0-4v-sqg" firstAttribute="top" secondItem="N2M-i3-cdC" secondAttribute="bottom" constant="16" id="FIL-6G-uyw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sJF-2o-nUw" secondAttribute="trailing" constant="16" id="H4L-9H-nsw"/>
@@ -76,6 +76,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Главная" image="house" catalog="system" id="dLF-4z-mXo"/>
                     <navigationItem key="navigationItem" title="Главная" id="G8t-Bb-XTO"/>
                     <connections>
                         <outlet property="segmentedControl" destination="N2M-i3-cdC" id="gfe-ZX-s0j"/>
@@ -86,7 +87,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="118.52678571428571"/>
+        </scene>
+        <!--Графики-->
+        <scene sceneID="mFI-XQ-3qD">
+            <objects>
+                <viewController id="S9T-IS-smL" customClass="ChartsScreenViewController" customModule="SmartHouseBalance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G07-ch-yNg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-3v-VKh">
+                                <rect key="frame" x="16" y="727" width="382" height="70"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-a3-c4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="За весь год"/>
+                                            <segment title="По месяцам"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeMonthSegment:" destination="S9T-IS-smL" eventType="valueChanged" id="zFz-ys-cU3"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Yi-Wd-W0P">
+                                        <rect key="frame" x="0.0" y="39" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="2019"/>
+                                            <segment title="2020"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeYearSegment:" destination="S9T-IS-smL" eventType="valueChanged" id="wDD-4r-cxe"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TFV-vZ-dq9">
+                                <rect key="frame" x="16" y="687" width="382" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGt-Tm-Mdx">
+                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Предыдущий месяц"/>
+                                        <connections>
+                                            <action selector="backMonthButtonClick:" destination="S9T-IS-smL" eventType="touchUpInside" id="22U-Tl-mdH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlP-JF-gmx">
+                                        <rect key="frame" x="199.5" y="0.0" width="182.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Следующий месяц"/>
+                                        <connections>
+                                            <action selector="nextMonthButtonClick:" destination="S9T-IS-smL" eventType="touchUpInside" id="Xnf-dQ-yYX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQ2-0G-Po2" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="142" width="382" height="537"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий заголовок" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43n-S8-nRm">
+                                <rect key="frame" x="16" y="104" width="382" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="43n-S8-nRm" firstAttribute="top" secondItem="EVf-XY-6aq" secondAttribute="top" constant="16" id="4Xr-dj-wSn"/>
+                            <constraint firstItem="EVf-XY-6aq" firstAttribute="trailing" secondItem="43n-S8-nRm" secondAttribute="trailing" constant="16" id="82c-7K-81v"/>
+                            <constraint firstItem="aEl-3v-VKh" firstAttribute="leading" secondItem="EVf-XY-6aq" secondAttribute="leading" constant="16" id="Bt8-UF-cBw"/>
+                            <constraint firstItem="EVf-XY-6aq" firstAttribute="bottom" secondItem="aEl-3v-VKh" secondAttribute="bottom" constant="16" id="FUc-eX-qbI"/>
+                            <constraint firstItem="mQ2-0G-Po2" firstAttribute="leading" secondItem="EVf-XY-6aq" secondAttribute="leading" constant="16" id="IdP-KM-fjb"/>
+                            <constraint firstItem="EVf-XY-6aq" firstAttribute="trailing" secondItem="mQ2-0G-Po2" secondAttribute="trailing" constant="16" id="NM4-yy-484"/>
+                            <constraint firstAttribute="trailing" secondItem="TFV-vZ-dq9" secondAttribute="trailing" constant="16" id="NrS-iE-tv3"/>
+                            <constraint firstItem="43n-S8-nRm" firstAttribute="leading" secondItem="EVf-XY-6aq" secondAttribute="leading" constant="16" id="Vbr-U1-Mdl"/>
+                            <constraint firstItem="TFV-vZ-dq9" firstAttribute="leading" secondItem="EVf-XY-6aq" secondAttribute="leading" constant="16" id="egb-w0-wad"/>
+                            <constraint firstItem="TFV-vZ-dq9" firstAttribute="top" secondItem="mQ2-0G-Po2" secondAttribute="bottom" constant="8" id="qde-RW-cxl"/>
+                            <constraint firstItem="mQ2-0G-Po2" firstAttribute="top" secondItem="43n-S8-nRm" secondAttribute="bottom" constant="8" id="sZk-tz-hNb"/>
+                            <constraint firstItem="EVf-XY-6aq" firstAttribute="trailing" secondItem="aEl-3v-VKh" secondAttribute="trailing" constant="16" id="wHT-zm-LNW"/>
+                            <constraint firstItem="aEl-3v-VKh" firstAttribute="top" secondItem="TFV-vZ-dq9" secondAttribute="bottom" constant="8" id="xNy-aD-nXU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EVf-XY-6aq"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Графики" image="chart.bar" catalog="system" id="Tlk-lk-dqB"/>
+                    <connections>
+                        <outlet property="backMonth" destination="VGt-Tm-Mdx" id="fgd-Pv-8nf"/>
+                        <outlet property="currentTitleLabel" destination="43n-S8-nRm" id="OK8-z5-eMi"/>
+                        <outlet property="monthContainer" destination="TFV-vZ-dq9" id="kNA-h0-iZ6"/>
+                        <outlet property="monthSegmentedControl" destination="rSM-a3-c4W" id="WQb-zD-5jA"/>
+                        <outlet property="nextMouth" destination="HlP-JF-gmx" id="qgF-D6-a7q"/>
+                        <outlet property="pieChartView" destination="mQ2-0G-Po2" id="V9E-Kl-hU7"/>
+                        <outlet property="yearsSegmentedControl" destination="5Yi-Wd-W0P" id="kOx-R8-yEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dY3-WQ-LV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="850.44642857142856"/>
         </scene>
         <!--Добавить услугу-->
         <scene sceneID="nnI-vR-UGI">
@@ -210,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt5-dT-mAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="119"/>
+            <point key="canvasLocation" x="2915.9420289855075" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fby-fI-wgH">
@@ -223,12 +323,35 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wEu-Ga-3gN"/>
+                        <segue destination="wIl-Ep-VYH" kind="relationship" relationship="rootViewController" id="wEu-Ga-3gN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4A-2z-iqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BZ8-XA-5Pt">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wIl-Ep-VYH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZRI-y9-UX6"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yf3-AV-ESM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CYu-vM-Tl0"/>
+                        <segue destination="S9T-IS-smL" kind="relationship" relationship="viewControllers" id="s2R-k8-ayo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgi-GS-YNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="64" height="44"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+    </resources>
 </document>
