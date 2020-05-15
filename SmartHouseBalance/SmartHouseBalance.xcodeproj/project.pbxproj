@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BC3122A33298F56E7968C57 /* Pods_SmartHouseBalance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F547B9E2402BB01D4A94991 /* Pods_SmartHouseBalance.framework */; };
 		331E9B972468790D00AA37EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B962468790D00AA37EF /* AppDelegate.swift */; };
 		331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E9B982468790D00AA37EF /* SceneDelegate.swift */; };
 		331E9B9E2468790D00AA37EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E9B9C2468790D00AA37EF /* Main.storyboard */; };
@@ -17,11 +18,12 @@
 		339A8529246884CA004B5999 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A8528246884CA004B5999 /* ServiceModel.swift */; };
 		339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */; };
 		339A85302468A239004B5999 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852F2468A239004B5999 /* Persistence.swift */; };
-		D8D5D840856F6FE04CE9A2B8 /* Pods_SmartHouseBalance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */; };
+		33E2A5D2246F2381006B0475 /* ChartsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2A5D1246F2381006B0475 /* ChartsScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHouseBalance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F547B9E2402BB01D4A94991 /* Pods_SmartHouseBalance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHouseBalance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		327A52FF99D434C8575392A7 /* Pods-SmartHouseBalance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.release.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.release.xcconfig"; sourceTree = "<group>"; };
 		331E9B932468790D00AA37EF /* SmartHouseBalance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHouseBalance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331E9B962468790D00AA37EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		331E9B982468790D00AA37EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +36,8 @@
 		339A8528246884CA004B5999 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceScreenViewController.swift; sourceTree = "<group>"; };
 		339A852F2468A239004B5999 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.release.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.release.xcconfig"; sourceTree = "<group>"; };
-		F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.debug.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.debug.xcconfig"; sourceTree = "<group>"; };
+		33E2A5D1246F2381006B0475 /* ChartsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreenViewController.swift; sourceTree = "<group>"; };
+		3498792B59CA6CAF9D5396D3 /* Pods-SmartHouseBalance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.debug.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D5D840856F6FE04CE9A2B8 /* Pods_SmartHouseBalance.framework in Frameworks */,
+				2BC3122A33298F56E7968C57 /* Pods_SmartHouseBalance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 				331E9B952468790D00AA37EF /* SmartHouseBalance */,
 				331E9B942468790D00AA37EF /* Products */,
 				33C839F028568C68AD52B3E4 /* Pods */,
-				9C1B96E0C816B8FD950E0447 /* Frameworks */,
+				C853EB77BC071E91F5C17292 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +73,9 @@
 		331E9B952468790D00AA37EF /* SmartHouseBalance */ = {
 			isa = PBXGroup;
 			children = (
-				339A852C246898AD004B5999 /* AddServiceScreen */,
+				33E2A5CF246F2353006B0475 /* SecondTab */,
+				33E2A5CE246F2328006B0475 /* FirstTab */,
 				339A8527246884AC004B5999 /* Models */,
-				339A8521246881A0004B5999 /* MainScreen */,
 				331E9B962468790D00AA37EF /* AppDelegate.swift */,
 				331E9B982468790D00AA37EF /* SceneDelegate.swift */,
 				331E9B9C2468790D00AA37EF /* Main.storyboard */,
@@ -121,16 +123,41 @@
 		33C839F028568C68AD52B3E4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */,
-				68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */,
+				3498792B59CA6CAF9D5396D3 /* Pods-SmartHouseBalance.debug.xcconfig */,
+				327A52FF99D434C8575392A7 /* Pods-SmartHouseBalance.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9C1B96E0C816B8FD950E0447 /* Frameworks */ = {
+		33E2A5CE246F2328006B0475 /* FirstTab */ = {
 			isa = PBXGroup;
 			children = (
-				0AF072CEEAADE6579AFF7A77 /* Pods_SmartHouseBalance.framework */,
+				339A852C246898AD004B5999 /* AddServiceScreen */,
+				339A8521246881A0004B5999 /* MainScreen */,
+			);
+			path = FirstTab;
+			sourceTree = "<group>";
+		};
+		33E2A5CF246F2353006B0475 /* SecondTab */ = {
+			isa = PBXGroup;
+			children = (
+				33E2A5D0246F2365006B0475 /* ChartsScreen */,
+			);
+			path = SecondTab;
+			sourceTree = "<group>";
+		};
+		33E2A5D0246F2365006B0475 /* ChartsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33E2A5D1246F2381006B0475 /* ChartsScreenViewController.swift */,
+			);
+			path = ChartsScreen;
+			sourceTree = "<group>";
+		};
+		C853EB77BC071E91F5C17292 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F547B9E2402BB01D4A94991 /* Pods_SmartHouseBalance.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,11 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 331E9BA72468791700AA37EF /* Build configuration list for PBXNativeTarget "SmartHouseBalance" */;
 			buildPhases = (
-				7D899B418F16037AEF60DA2F /* [CP] Check Pods Manifest.lock */,
+				ED2870D7E4B436DEB6A8645A /* [CP] Check Pods Manifest.lock */,
 				331E9B8F2468790D00AA37EF /* Sources */,
 				331E9B902468790D00AA37EF /* Frameworks */,
 				331E9B912468790D00AA37EF /* Resources */,
-				38A064ED5ECA25DBA8CFE234 /* [CP] Embed Pods Frameworks */,
+				5DF2B7510B699EFA21E34080 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,7 +231,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38A064ED5ECA25DBA8CFE234 /* [CP] Embed Pods Frameworks */ = {
+		5DF2B7510B699EFA21E34080 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,7 +248,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7D899B418F16037AEF60DA2F /* [CP] Check Pods Manifest.lock */ = {
+		ED2870D7E4B436DEB6A8645A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,6 +283,7 @@
 				339A85302468A239004B5999 /* Persistence.swift in Sources */,
 				339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */,
 				331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */,
+				33E2A5D2246F2381006B0475 /* ChartsScreenViewController.swift in Sources */,
 				339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +426,7 @@
 		};
 		331E9BA82468791700AA37EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1D7A26D071E6B833CF09624 /* Pods-SmartHouseBalance.debug.xcconfig */;
+			baseConfigurationReference = 3498792B59CA6CAF9D5396D3 /* Pods-SmartHouseBalance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,7 +446,7 @@
 		};
 		331E9BA92468791700AA37EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68BAE93B4EAED7CE00CCB907 /* Pods-SmartHouseBalance.release.xcconfig */;
+			baseConfigurationReference = 327A52FF99D434C8575392A7 /* Pods-SmartHouseBalance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
