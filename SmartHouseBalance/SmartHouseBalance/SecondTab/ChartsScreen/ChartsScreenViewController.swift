@@ -35,36 +35,57 @@ class ChartsScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if checkDataAvailable()
+        {
+            yearsSegmentedControl.removeAllSegments()
 
-        yearsSegmentedControl.removeAllSegments()
+            for (index, year) in Persistence.storage.getYears().enumerated() {
+                yearsSegmentedControl.insertSegment(withTitle: year, at: index, animated: false)
+            }
 
-        for (index, year) in Persistence.storage.getYears().enumerated() {
-            yearsSegmentedControl.insertSegment(withTitle: year, at: index, animated: false)
+            yearsSegmentedControl.selectedSegmentIndex = yearsSegmentedControl.numberOfSegments - 1;
+            changeTitleLabel()
+            changeData()
         }
-
-        yearsSegmentedControl.selectedSegmentIndex = yearsSegmentedControl.numberOfSegments - 1;
-        changeTitleLabel()
-        changeData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        changeData()
+        
+        pieChartView.noDataText = "Нет данных по расходам."
+        
+        if checkDataAvailable()
+        {
+            changeData()
+        }
+    }
+    
+    private func checkDataAvailable() -> Bool {
+        if Persistence.storage.getServices().isEmpty
+        {
+            monthSegmentedControl.isHidden = true
+            yearsSegmentedControl.isHidden = true
+            currentTitleLabel.text = "Нет данных"
+            return false
+        } else {
+            monthSegmentedControl.isHidden = false
+            yearsSegmentedControl.isHidden = false
+            return true
+        }
+        
     }
 
     private func setChart(_ dataPoints: [String], values: [Float]) {
-        pieChartView.noDataText = "You need to provide data for the chart."
-
         var dataEntries: [PieChartDataEntry] = []
 
         for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: Double(values[i]), label: dataPoints[i])
+            let dataEntry = PieChartDataEntry(value: roundVal(Double(values[i]), toNearest: 0.01), label: dataPoints[i])
             dataEntries.append(dataEntry)
         }
 
         let chartDataSet = PieChartDataSet(entries: dataEntries, label: "")
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.colors = ChartColorTemplates.pastel()
         let chartData = PieChartData(dataSet: chartDataSet)
         pieChartView.data = chartData
     }
@@ -98,16 +119,18 @@ class ChartsScreenViewController: UIViewController {
             setChart(months, values: expenses)
         }
     }
+    
+    private func roundVal(_ value: Double, toNearest: Double) -> Double {
+        return round(value / toNearest) * toNearest
+    }
 
     private func getMonthFromServices(services: [ServiceModel]) -> Dictionary<String, Float> {
         var dictionary = Dictionary<String, Float>()
         let calendar = Calendar.current
 
         for service in services {
-            if (dictionary.keys.contains(monthNames[calendar.component(.month, from: service.datePayment) - 1])) {
-                dictionary[monthNames[calendar.component(.month, from: service.datePayment) - 1]]! += service.price
-            } else {
-                dictionary.updateValue(service.price, forKey: monthNames[calendar.component(.month, from: service.datePayment) - 1])
+            if !(dictionary.keys.contains(monthNames[calendar.component(.month, from: service.datePayment) - 1])) {
+                dictionary.updateValue(Persistence.storage.getExpensesTotalForMonth(month: calendar.component(.month, from: service.datePayment)), forKey: monthNames[calendar.component(.month, from: service.datePayment) - 1])
             }
         }
         return dictionary
@@ -115,13 +138,12 @@ class ChartsScreenViewController: UIViewController {
 
     private func getNameOrganizationFromServices(services: [ServiceModel]) -> Dictionary<String, Float> {
         var dictionary = Dictionary<String, Float>()
+        let calendar = Calendar.current
 
         for service in services {
-            let title = "\(service.nameOrganization)\n(\(service.typeService))"
-            if (dictionary.keys.contains(title)) {
-                dictionary[title]! += service.price
-            } else {
-                dictionary.updateValue(service.price, forKey: title)
+            let title = "\(service.nameOrganization)\n(\(service.typeService?.nameType ?? ""))"
+            if !(dictionary.keys.contains(title)) {
+                dictionary.updateValue(Persistence.storage.getExpensesTotalForOrganization(nameOrganization: service.nameOrganization, date: (calendar.component(.month, from: service.datePayment), (calendar.component(.year, from: service.datePayment)))), forKey: title)
             }
         }
         return dictionary

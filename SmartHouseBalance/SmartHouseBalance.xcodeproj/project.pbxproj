@@ -19,6 +19,7 @@
 		339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852D246898D4004B5999 /* AddServiceScreenViewController.swift */; };
 		339A85302468A239004B5999 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A852F2468A239004B5999 /* Persistence.swift */; };
 		33E2A5D2246F2381006B0475 /* ChartsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2A5D1246F2381006B0475 /* ChartsScreenViewController.swift */; };
+		BDE670AC248FF65B0032CCD2 /* TypeServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE670AB248FF65B0032CCD2 /* TypeServiceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		339A852F2468A239004B5999 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		33E2A5D1246F2381006B0475 /* ChartsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreenViewController.swift; sourceTree = "<group>"; };
 		3498792B59CA6CAF9D5396D3 /* Pods-SmartHouseBalance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHouseBalance.debug.xcconfig"; path = "Target Support Files/Pods-SmartHouseBalance/Pods-SmartHouseBalance.debug.xcconfig"; sourceTree = "<group>"; };
+		BDE670AB248FF65B0032CCD2 /* TypeServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeServiceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				339A8528246884CA004B5999 /* ServiceModel.swift */,
+				BDE670AB248FF65B0032CCD2 /* TypeServiceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				339A852E246898D4004B5999 /* AddServiceScreenViewController.swift in Sources */,
 				339A85302468A239004B5999 /* Persistence.swift in Sources */,
 				339A85262468844B004B5999 /* ServiceTableViewCell.swift in Sources */,
+				BDE670AC248FF65B0032CCD2 /* TypeServiceModel.swift in Sources */,
 				331E9B992468790D00AA37EF /* SceneDelegate.swift in Sources */,
 				33E2A5D2246F2381006B0475 /* ChartsScreenViewController.swift in Sources */,
 				339A8523246881C7004B5999 /* MainScreenViewController.swift in Sources */,

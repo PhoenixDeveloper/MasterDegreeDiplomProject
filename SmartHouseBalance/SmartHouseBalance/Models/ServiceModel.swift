@@ -13,9 +13,11 @@ class ServiceModel: Object, Comparable {
     /// Наименование организации
     @objc dynamic var nameOrganization: String = ""
     /// Тип услуги
-    @objc dynamic var typeService: String = ""
+    @objc dynamic var typeService: TypeServiceModel?
     /// Стоимость
     @objc dynamic var price: Float = 0
+    /// Показания счетчиков
+    let metersData = RealmOptional<Float>()
     /// Дата оплаты
     @objc dynamic var datePayment: Date = Date()
 
