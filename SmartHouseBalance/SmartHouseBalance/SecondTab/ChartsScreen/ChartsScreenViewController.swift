@@ -35,27 +35,48 @@ class ChartsScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if checkDataAvailable()
+        {
+            yearsSegmentedControl.removeAllSegments()
 
-        yearsSegmentedControl.removeAllSegments()
+            for (index, year) in Persistence.storage.getYears().enumerated() {
+                yearsSegmentedControl.insertSegment(withTitle: year, at: index, animated: false)
+            }
 
-        for (index, year) in Persistence.storage.getYears().enumerated() {
-            yearsSegmentedControl.insertSegment(withTitle: year, at: index, animated: false)
+            yearsSegmentedControl.selectedSegmentIndex = yearsSegmentedControl.numberOfSegments - 1;
+            changeTitleLabel()
+            changeData()
         }
-
-        yearsSegmentedControl.selectedSegmentIndex = yearsSegmentedControl.numberOfSegments - 1;
-        changeTitleLabel()
-        changeData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        changeData()
+        
+        pieChartView.noDataText = "Нет данных по расходам."
+        
+        if checkDataAvailable()
+        {
+            changeData()
+        }
+    }
+    
+    private func checkDataAvailable() -> Bool {
+        if Persistence.storage.getServices().isEmpty
+        {
+            monthSegmentedControl.isHidden = true
+            yearsSegmentedControl.isHidden = true
+            currentTitleLabel.text = "Нет данных"
+            return false
+        } else {
+            monthSegmentedControl.isHidden = false
+            yearsSegmentedControl.isHidden = false
+            return true
+        }
+        
     }
 
     private func setChart(_ dataPoints: [String], values: [Float]) {
-        pieChartView.noDataText = "You need to provide data for the chart."
-
         var dataEntries: [PieChartDataEntry] = []
 
         for i in 0..<dataPoints.count {
@@ -64,7 +85,7 @@ class ChartsScreenViewController: UIViewController {
         }
 
         let chartDataSet = PieChartDataSet(entries: dataEntries, label: "")
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.colors = ChartColorTemplates.pastel()
         let chartData = PieChartData(dataSet: chartDataSet)
         pieChartView.data = chartData
     }
@@ -117,7 +138,7 @@ class ChartsScreenViewController: UIViewController {
         var dictionary = Dictionary<String, Float>()
 
         for service in services {
-            let title = "\(service.nameOrganization)\n(\(service.typeService))"
+            let title = "\(service.nameOrganization)\n(\(service.typeService?.nameType ?? ""))"
             if (dictionary.keys.contains(title)) {
                 dictionary[title]! += service.price
             } else {

@@ -27,7 +27,6 @@ class ServiceTableViewCell: UITableViewCell, ModelTransfer {
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .systemRed
         return label
     }()
 
@@ -51,9 +50,23 @@ class ServiceTableViewCell: UITableViewCell, ModelTransfer {
 
     func update(with model: ServiceModel) {
         nameOrganizationLabel.text = model.nameOrganization
-        typeServiceLabel.text = model.typeService
-        priceLabel.text = "\(model.price) руб."
+        typeServiceLabel.text = model.typeService?.nameType
+        priceLabel.attributedText = setRedPartText(redText: "\(model.price) руб.", blackText: (model.metersData.value != nil ? " (Показания счетчиков: \(model.metersData.value!))" : ""))
         datePaymentLabel.text = dateFormatter(date: model.datePayment)
+    }
+    
+    private func setRedPartText(redText: String, blackText: String) -> NSMutableAttributedString {
+        let firstAttributedString = NSAttributedString(
+            string: redText,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.red]
+        )
+        let secondAttributedString = NSAttributedString(string: blackText)
+
+        let attributedString = NSMutableAttributedString(string: "")
+        attributedString.append(firstAttributedString)
+        attributedString.append(secondAttributedString)
+        
+        return attributedString
     }
 
     private func dateFormatter(date: Date) -> String {

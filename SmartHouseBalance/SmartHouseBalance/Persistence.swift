@@ -13,6 +13,7 @@ class Persistence {
     static var storage = Persistence()
 
     private lazy var services: [ServiceModel] = Array(self.realm.objects(ServiceModel.self))
+    private lazy var serviceTypes: [TypeServiceModel] = Array(self.realm.objects(TypeServiceModel.self))
 
     private let realm = try! Realm()
 
@@ -22,6 +23,13 @@ class Persistence {
         try! realm.write {
             realm.add(service)
             services.append(service)
+        }
+    }
+    
+    func addServiceType(type: TypeServiceModel) {
+        try! realm.write {
+            realm.add(type)
+            serviceTypes.append(type)
         }
     }
 
@@ -37,6 +45,22 @@ class Persistence {
         let calendar = Calendar.current
         let services = self.services.filter({ calendar.component(.year, from: $0.datePayment) == year})
         return month != nil ? services.filter({ calendar.component(.month, from: $0.datePayment) == month! }) : services
+    }
+    
+    func getServiceTypes() -> [TypeServiceModel] {
+        return serviceTypes.sorted()
+    }
+    
+    func getServiceTypesName() -> [String] {
+        return serviceTypes.sorted().map({ $0.nameType })
+    }
+    
+    func getServiceTypeByName(name: String) -> TypeServiceModel? {
+        return serviceTypes.filter({ $0.nameType == name }).first
+    }
+    
+    func getCountServiceTypes() -> Int {
+        serviceTypes.count
     }
 
     func getExpensesTotal() -> Float {
