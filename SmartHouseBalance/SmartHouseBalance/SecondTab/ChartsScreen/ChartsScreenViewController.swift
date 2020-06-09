@@ -80,7 +80,7 @@ class ChartsScreenViewController: UIViewController {
         var dataEntries: [PieChartDataEntry] = []
 
         for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: Double(values[i]), label: dataPoints[i])
+            let dataEntry = PieChartDataEntry(value: roundVal(Double(values[i]), toNearest: 0.01), label: dataPoints[i])
             dataEntries.append(dataEntry)
         }
 
@@ -119,16 +119,18 @@ class ChartsScreenViewController: UIViewController {
             setChart(months, values: expenses)
         }
     }
+    
+    private func roundVal(_ value: Double, toNearest: Double) -> Double {
+        return round(value / toNearest) * toNearest
+    }
 
     private func getMonthFromServices(services: [ServiceModel]) -> Dictionary<String, Float> {
         var dictionary = Dictionary<String, Float>()
         let calendar = Calendar.current
 
         for service in services {
-            if (dictionary.keys.contains(monthNames[calendar.component(.month, from: service.datePayment) - 1])) {
-                dictionary[monthNames[calendar.component(.month, from: service.datePayment) - 1]]! += service.price
-            } else {
-                dictionary.updateValue(service.price, forKey: monthNames[calendar.component(.month, from: service.datePayment) - 1])
+            if !(dictionary.keys.contains(monthNames[calendar.component(.month, from: service.datePayment) - 1])) {
+                dictionary.updateValue(Persistence.storage.getExpensesTotalForMonth(month: calendar.component(.month, from: service.datePayment)), forKey: monthNames[calendar.component(.month, from: service.datePayment) - 1])
             }
         }
         return dictionary
@@ -136,13 +138,12 @@ class ChartsScreenViewController: UIViewController {
 
     private func getNameOrganizationFromServices(services: [ServiceModel]) -> Dictionary<String, Float> {
         var dictionary = Dictionary<String, Float>()
+        let calendar = Calendar.current
 
         for service in services {
             let title = "\(service.nameOrganization)\n(\(service.typeService?.nameType ?? ""))"
-            if (dictionary.keys.contains(title)) {
-                dictionary[title]! += service.price
-            } else {
-                dictionary.updateValue(service.price, forKey: title)
+            if !(dictionary.keys.contains(title)) {
+                dictionary.updateValue(Persistence.storage.getExpensesTotalForOrganization(nameOrganization: service.nameOrganization, date: (calendar.component(.month, from: service.datePayment), (calendar.component(.year, from: service.datePayment)))), forKey: title)
             }
         }
         return dictionary

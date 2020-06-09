@@ -62,9 +62,24 @@ class Persistence {
     func getCountServiceTypes() -> Int {
         serviceTypes.count
     }
+    
+    func getExpensesTotalForMonth(month: Int) -> Float {
+        let calendar = Calendar.current
+        return calculateExpensesForServices(services: services.filter({ calendar.component(.month, from: $0.datePayment) == month }))
+    }
+    
+    func getExpensesTotalForOrganization(nameOrganization: String, date: (month: Int, year: Int)? = nil) -> Float {
+        let calendar = Calendar.current
+        if (date != nil) {
+            let servicesY = self.services.filter({ calendar.component(.year, from: $0.datePayment) == date!.year})
+            let servicesM = servicesY.filter({ calendar.component(.month, from: $0.datePayment) == date!.month })
+            return calculateExpensesForServices(services: servicesM.filter({ $0.nameOrganization == nameOrganization }))
+        }
+        return calculateExpensesForServices(services: services.filter({ $0.nameOrganization == nameOrganization }))
+    }
 
     func getExpensesTotal() -> Float {
-        return services.reduce(0, { $0 + $1.price })
+        return calculateExpensesForServices(services: services)
     }
 
     func getYears() -> [String] {
@@ -77,5 +92,13 @@ class Persistence {
             }
         }
         return years.sorted()
+    }
+    
+    private func calculateExpensesForServices(services: [ServiceModel]) -> Float {
+        return round(services.reduce(0, { $0 + $1.price }), toNearest: 0.01)
+    }
+    
+    private func round(_ value: Float, toNearest: Float) -> Float {
+      return roundf(value / toNearest) * toNearest
     }
 }
